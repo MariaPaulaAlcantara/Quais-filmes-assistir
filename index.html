@@ -4,10 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    
     <title>Lista de filmes</title>
 </head>
+
 <body>
-    <h1>Teste</h1>
+    <main class="container">
+        <div class="containerFormulario">
+            
+            <form id="formulario">
+                <div>
+                    <h1>Qual Filme deseja salvar?</h1>
+                </div>
+                
+                <div class="intensForm">
+                    <label>Nome do Filme</label>
+                    <input type="text" name="nomeDoFilme" id="nomeDoFilme">
+                </div>
+
+                <div class="intensForm">
+                    <label>Gênero</label>
+                    <input type="text" name="generoDoFilme" id="generoDoFilme">
+                </div>
+                
+                <div class="intensForm">
+                    <label>Plataforma</label>
+                    <input type="text" name="plataformaDoFilme" id="plataformaDoFilme">
+                </div>
+                
+                <div class="intensForm">
+                    <button class="botao">Salvar</button>
+                </div>              
+            </form>  
+        </div>
+
+
+        <ul class="listaDeFilmes" id="listaDeFilmes">
+            <li>A culpa é das estrelas <strong>Romance</strong> <strong>Netflix</strong></li>
+        </ul>
+
+    </main>
+
+    <script src="scripts/main.js"></script>
     
 </body>
 </html>
