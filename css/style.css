@@ -1,0 +1,33 @@
+/* label, .botao, .containerFormulario{
+    display: flex;
+    
+}
+
+form{
+    display: flex;
+    justify-content: center;
+} */
+
+body{
+    background: rgba(241, 243, 244, 1);
+    font-family: 'Poppins', sans-serif;
+}
+
+form, .intensForm{
+    display: inline-grid;
+}
+
+.containerFormulario{
+    display: flex;
+    justify-content: center;
+
+}
+
+form{
+    background: white;
+    padding: 2rem 10rem 3rem 10rem;
+}
+
+.intensForm{
+    margin: 0.7rem;
+}
