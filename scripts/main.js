@@ -15,17 +15,28 @@ form.addEventListener("submit", (evento)=>{
     const nomeGeneroDoFilme = evento.target.elements['generoDoFilme'];
     const nomePlataformaDoFilme = evento.target.elements['plataformaDoFilme'];
 
+    //O código a baixo verifica se existe algum elemento com o mesmo nome. Caso exista, ele guarda o objeto na const existe, ou undefined caso não exista.
+    const existe = dados.find(elemento => elemento.nomeDoFilme === nomeDoFilme.value);
+
     const registroDosFilmes = {
-        nomeDoFilme: nomeDoFilme.value,
-        generoDoFilme: nomeGeneroDoFilme.value,
-        plataformaDoFilme: nomePlataformaDoFilme.value
+        "nomeDoFilme": nomeDoFilme.value,
+        "generoDoFilme": nomeGeneroDoFilme.value,
+        "plataformaDoFilme": nomePlataformaDoFilme.value
     }
 
-    dados.push(registroDosFilmes);
+    if(existe){
+        registroDosFilmes.id = existe.id;
+        dados[dados.findIndex(elemento => elemento.id === existe.id)] = registroDosFilmes
+
+    } else {
+        registroDosFilmes.id = dados[dados.length -1] ? (dados[dados.length-1]).id + 1 : 0;
+
+        criarElemento(registroDosFilmes);
+
+        dados.push(registroDosFilmes);
+    }
 
     localStorage.setItem("dadosProduto", JSON.stringify(dados));  //localStorage só guarda string, por isso usamos JSON.stringify
-
-    criarElemento(registroDosFilmes);
 
     //Limpar o campo
     nomeDoFilme.value = "";
@@ -45,8 +56,30 @@ function criarElemento(item){
     capturandoUl.appendChild(createLi); //li foi para dentro da ul
     console.log(capturandoUl);
 
+    createLi.dataset.id = item.id;
     createLi.innerHTML = item.nomeDoFilme + " " + item.generoDoFilme + " " + item.plataformaDoFilme;
+    createLi.appendChild(botaoDeleta(item.id));  //botão deleta foi para dentro do li
+}
 
+function botaoDeleta(id){
+    const elementoBotao = document.createElement("button");
+    elementoBotao.innerText = "X";
+
+    elementoBotao.addEventListener("click", function(){
+        deletaElemento(this.parentNode, id);
+    })
+
+    return elementoBotao;
+}
+
+function deletaElemento(tag, id){
+    tag.remove();
+
+    console.log(id);
+
+    dados.splice(dados.findIndex(elemento => elemento.id === id), 1);
+
+    localStorage.setItem("dadosProduto", JSON.stringify(dados));
 
 }
 
