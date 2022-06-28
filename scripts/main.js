@@ -1,5 +1,10 @@
 const form = document.querySelector("#formulario");
 const dados = JSON.parse(localStorage.getItem("dadosProduto")) || [];
+console.log(dados);
+
+dados.forEach((elemento)=>{
+    criarElemento(elemento);
+})
 
 form.addEventListener("submit", (evento)=>{
     evento.preventDefault(); //previnindo o comportamento padrão desse elemento
@@ -18,9 +23,9 @@ form.addEventListener("submit", (evento)=>{
 
     dados.push(registroDosFilmes);
 
-    localStorage.setItem("dadosProduto", JSON.stringify(dados));
+    localStorage.setItem("dadosProduto", JSON.stringify(dados));  //localStorage só guarda string, por isso usamos JSON.stringify
 
-    criarElemento(nomeDoFilme.value, nomeGeneroDoFilme.value, nomePlataformaDoFilme.value);
+    criarElemento(registroDosFilmes);
 
     //Limpar o campo
     nomeDoFilme.value = "";
@@ -31,8 +36,7 @@ form.addEventListener("submit", (evento)=>{
 });
 
 
-function criarElemento(nomeDoFilme, nomeGeneroDoFilme, nomePlataformaDoFilme){
-    console.log(nomeDoFilme);
+function criarElemento(item){
 
     const createLi = document.createElement('li');
     createLi.classList.add('item'); //adicionar a classe item no createLi
@@ -41,7 +45,7 @@ function criarElemento(nomeDoFilme, nomeGeneroDoFilme, nomePlataformaDoFilme){
     capturandoUl.appendChild(createLi); //li foi para dentro da ul
     console.log(capturandoUl);
 
-    createLi.innerHTML = nomeDoFilme + " " + nomeGeneroDoFilme + " " + nomePlataformaDoFilme;
+    createLi.innerHTML = item.nomeDoFilme + " " + item.generoDoFilme + " " + item.plataformaDoFilme;
 
 
 }
@@ -59,3 +63,6 @@ function criarElemento(nomeDoFilme, nomeGeneroDoFilme, nomePlataformaDoFilme){
 // localStorage.getItem() para recuperar o valor do par chave: valor;
 // localStorage.removeItem() para remover um par específico;
 // localStorage.clear() apaga TODOS os pares gravados pro aquele domínio;
+
+//Trazer os dados do localStorage para pagina
+//usa o getItem
