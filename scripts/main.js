@@ -52,13 +52,32 @@ function criarElemento(item){
     const createLi = document.createElement('li');
     createLi.classList.add('item'); //adicionar a classe item no createLi
 
-    const capturandoUl = document.querySelector("#listaDeFilmes");
-    capturandoUl.appendChild(createLi); //li foi para dentro da ul
-    console.log(capturandoUl);
+    const varNomeDoFilme = item.nomeDoFilme;
 
     createLi.dataset.id = item.id;
-    createLi.innerHTML = item.nomeDoFilme + " " + item.generoDoFilme + " " + item.plataformaDoFilme;
+    createLi.innerHTML += varNomeDoFilme;
+
+    const createStrongGenero = document.createElement('strong');
+    createStrongGenero.classList.add('strong');
+    createStrongGenero.setAttribute('id','strongGeneroTeste');
+    createStrongGenero.innerHTML = item.generoDoFilme;
+    createLi.appendChild(createStrongGenero);
+
+    const createStrongPlataforma = document.createElement('strong');
+    createStrongPlataforma.classList.add('strong');
+    createStrongPlataforma.setAttribute('id', 'strongPlataforma');
+    createStrongPlataforma.innerHTML = item.plataformaDoFilme;
+    createLi.appendChild(createStrongPlataforma);
+
+    console.log(createStrongGenero);
+    // console.log(createStrongPlataforma);
+
+    // createLi.innerHTML += varPlataformaDoFilme;
+
+    const capturandoUl = document.querySelector("#listaDeFilmes");
     createLi.appendChild(botaoDeleta(item.id));  //botão deleta foi para dentro do li
+    capturandoUl.appendChild(createLi); //li foi para dentro da ul
+    console.log(capturandoUl);
 }
 
 function botaoDeleta(id){
