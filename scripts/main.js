@@ -82,7 +82,7 @@ function criarElemento(item){
 
 function botaoDeleta(id){
     const elementoBotao = document.createElement("button");
-    elementoBotao.classList.add('botaoLista');
+    elementoBotao.classList.add('botaoExcluir');
     elementoBotao.innerText = "Excluir";
 
     elementoBotao.addEventListener("click", function(){
