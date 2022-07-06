@@ -59,7 +59,7 @@ function criarElemento(item){
 
     const createStrongGenero = document.createElement('strong');
     createStrongGenero.classList.add('strong');
-    createStrongGenero.setAttribute('id','strongGeneroTeste');
+    createStrongGenero.setAttribute('id','strongGenero');
     createStrongGenero.innerHTML = item.generoDoFilme;
     createLi.appendChild(createStrongGenero);
 
@@ -82,7 +82,8 @@ function criarElemento(item){
 
 function botaoDeleta(id){
     const elementoBotao = document.createElement("button");
-    elementoBotao.innerText = "X";
+    elementoBotao.classList.add('botaoLista');
+    elementoBotao.innerText = "Excluir";
 
     elementoBotao.addEventListener("click", function(){
         deletaElemento(this.parentNode, id);
