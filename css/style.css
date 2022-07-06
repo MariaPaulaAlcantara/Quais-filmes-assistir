@@ -1,20 +1,19 @@
-/* label, .botao, .containerFormulario{
-    display: flex;
-    
-}
-
-form{
-    display: flex;
-    justify-content: center;
+/* * {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0
 } */
 
+/* Paleta de cores #333333, #9e0c39, #e21b5a, #2a2c31, (texto)#434247 */
+/* borda  #dfe1e5 */
 body{
-    background: rgba(241, 243, 244, 1);
     font-family: 'Poppins', sans-serif;
-}
-
-form, .intensForm{
-    display: inline-grid;
+    display: grid;
+    justify-content: space-around;
+    margin:0;
+    padding:0;
 }
 
 .containerFormulario{
@@ -24,10 +23,99 @@ form, .intensForm{
 }
 
 form{
-    background: white;
-    padding: 2rem 10rem 3rem 10rem;
+    display: inline;
+    margin: 3rem;
+    padding: 0;
+    border: 1px solid #2a728e;
+    border-radius: 4px;
+}
+
+.tituloFormulario h1{
+    background: #2a728e;
+    margin-top: 0;
+    padding: 1rem;
+    color: #ffffff;
+    font-size: x-large;
 }
 
 .intensForm{
+    display: inline-grid;
     margin: 0.7rem;
+}
+
+.intensForm label{
+    font-weight: bold;
+    color: #434247;
+}
+
+.intensForm input{
+    padding: 5px;
+    border: 1px solid #7c7c7b99;
+    border-radius: 3px;
+}
+
+.buttonForm{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.buttonForm .botao{
+    padding: 7px 45px 7px 45px;
+    background: #2a728e;
+    border: 2px solid #2a728e;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+	padding: 0;
+    text-align: center;
+    /* margin-top: 5rem; */
+}
+
+li{
+    margin: 3rem;
+    padding: 1.7rem;
+    text-align: justify;
+    border: 1px solid #7c7c7b99;
+    border-radius: 4px;
+}
+
+.strong{
+    padding: 1rem;
+}
+
+#strongGenero{
+    color: white;
+    background: #9061c2;
+    padding: 6px 20px 6px 20px;
+    border-radius: 10px;
+    font-weight: initial;
+}
+
+#strongPlataforma{
+    background: #ff548f;
+    color: white;
+    padding: 0;
+    padding: 6px 20px 6px 20px;
+    border-radius: 10px;
+    font-weight: initial;
+    margin: 1rem;
+}
+
+.botaoExcluir{
+    color: white;
+    /* background: rgb(231, 65, 65); */
+    background: #2a728e;
+    border: none;
+    margin-top: -5px;
+    padding: 6px;
+    border-radius: 0.3rem;
+    cursor:pointer;
+    float: right;
 }

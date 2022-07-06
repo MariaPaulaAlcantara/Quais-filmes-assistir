@@ -53,9 +53,15 @@ function criarElemento(item){
     createLi.classList.add('item'); //adicionar a classe item no createLi
 
     const varNomeDoFilme = item.nomeDoFilme;
-
     createLi.dataset.id = item.id;
-    createLi.innerHTML += varNomeDoFilme;
+
+    const createStrongNome = document.createElement('strong');
+    createStrongNome.classList.add('strong');
+    createStrongNome.setAttribute('id', 'strongNome');
+    createStrongNome.innerHTML += varNomeDoFilme;
+    createLi.appendChild(createStrongNome);
+
+    // createLi.innerHTML += varNomeDoFilme;
 
     const createStrongGenero = document.createElement('strong');
     createStrongGenero.classList.add('strong');
