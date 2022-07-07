@@ -75,7 +75,6 @@ ul{
     margin: 0;
 	padding: 0;
     text-align: center;
-    /* margin-top: 5rem; */
 }
 
 li{
@@ -93,29 +92,27 @@ li{
 #strongGenero{
     color: white;
     background: #9061c2;
-    padding: 6px 20px 6px 20px;
+    padding: 6px 16px 6px 16px;
     border-radius: 10px;
     font-weight: initial;
+    font-size: small;
 }
 
 #strongPlataforma{
     background: #ff548f;
-    color: white;
+    color: #ffffff;
     padding: 0;
-    padding: 6px 20px 6px 20px;
+    padding: 6px 16px 6px 16px;
     border-radius: 10px;
     font-weight: initial;
     margin: 1rem;
+    font-size: small;
 }
 
-.botaoExcluir{
-    color: white;
-    /* background: rgb(231, 65, 65); */
-    background: #2a728e;
+.fa-trash-can{
+    background: #ffffff;
     border: none;
-    margin-top: -5px;
-    padding: 6px;
-    border-radius: 0.3rem;
     cursor:pointer;
     float: right;
+    font-size: 18px;
 }
