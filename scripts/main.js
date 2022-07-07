@@ -88,8 +88,7 @@ function criarElemento(item){
 
 function botaoDeleta(id){
     const elementoBotao = document.createElement("button");
-    elementoBotao.classList.add('botaoExcluir');
-    elementoBotao.innerText = "Excluir";
+    elementoBotao.classList.add("fa-solid", "fa-trash-can");
 
     elementoBotao.addEventListener("click", function(){
         deletaElemento(this.parentNode, id);
