@@ -107,7 +107,6 @@ li{
 #strongPlataforma{
     background: #ff548f;
     color: #ffffff;
-    padding: 0;
     padding: 6px 16px 6px 16px;
     border-radius: 10px;
     font-weight: initial;
@@ -125,4 +124,23 @@ li{
 
 .fa-trash-can:hover{
     color: red;
+}
+
+/* Parte Mobile */
+@media(max-width: 768px) {
+    .intensForm{
+        display: grid;
+    }
+
+    .strong{
+        padding: 1rem 1rem 1rem 0;
+    }
+
+    #strongNome{
+        display: flex;
+    }
+
+    /* .fa-trash-can{
+        margin-left: 15rem;
+    } */
 }
