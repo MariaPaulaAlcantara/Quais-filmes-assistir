@@ -1,6 +1,5 @@
 const form = document.querySelector("#formulario");
 const dados = JSON.parse(localStorage.getItem("dadosProduto")) || [];
-console.log(dados);
 
 dados.forEach((elemento)=>{
     criarElemento(elemento);
@@ -8,14 +7,12 @@ dados.forEach((elemento)=>{
 
 form.addEventListener("submit", (evento)=>{
     evento.preventDefault(); //previnindo o comportamento padrão desse elemento
-    console.log("clicado");
-    console.log(evento);
 
     const nomeDoFilme = evento.target.elements['nomeDoFilme'];
     const nomeGeneroDoFilme = evento.target.elements['generoDoFilme'];
     const nomePlataformaDoFilme = evento.target.elements['plataformaDoFilme'];
 
-    //O código a baixo verifica se existe algum elemento com o mesmo nome. Caso exista, ele guarda o objeto na const existe, ou undefined caso não exista.
+    //O código abaixo verifica se existe algum elemento com o mesmo nome. Caso exista, ele guarda o objeto na const existe, ou undefined caso não exista.
     const existe = dados.find(elemento => elemento.nomeDoFilme === nomeDoFilme.value);
 
     const registroDosFilmes = {
@@ -42,7 +39,6 @@ form.addEventListener("submit", (evento)=>{
     nomeDoFilme.value = "";
     nomeGeneroDoFilme.value = "";
     nomePlataformaDoFilme.value = "";
-
 
 });
 
@@ -75,15 +71,11 @@ function criarElemento(item){
     createStrongPlataforma.innerHTML = item.plataformaDoFilme;
     createLi.appendChild(createStrongPlataforma);
 
-    console.log(createStrongGenero);
-    // console.log(createStrongPlataforma);
-
     // createLi.innerHTML += varPlataformaDoFilme;
 
     const capturandoUl = document.querySelector("#listaDeFilmes");
     createLi.appendChild(botaoDeleta(item.id));  //botão deleta foi para dentro do li
     capturandoUl.appendChild(createLi); //li foi para dentro da ul
-    console.log(capturandoUl);
 }
 
 function botaoDeleta(id){
@@ -100,27 +92,9 @@ function botaoDeleta(id){
 function deletaElemento(tag, id){
     tag.remove();
 
-    console.log(id);
-
     dados.splice(dados.findIndex(elemento => elemento.id === id), 1);
 
     localStorage.setItem("dadosProduto", JSON.stringify(dados));
 
 }
 
-
-
-// localStorage
-// A estrutura de storage de dados é bem simples, composta pelo par chave e valor. Um exemplo:
-// {
-//     chave: valor;
-// }
-// os dados que serão gravados ali precisam ser convertidos para strings antes de serem gravados. Para fazer isso, basta usar o método JSON.stringify() antes de passar o valor para o setItem().
-
-// localStorage.setItem() para criar um novo par de chave: valor;
-// localStorage.getItem() para recuperar o valor do par chave: valor;
-// localStorage.removeItem() para remover um par específico;
-// localStorage.clear() apaga TODOS os pares gravados pro aquele domínio;
-
-//Trazer os dados do localStorage para pagina
-//usa o getItem
