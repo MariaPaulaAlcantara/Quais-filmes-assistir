@@ -26,12 +26,12 @@ form{
     display: inline;
     margin: 3rem;
     padding: 0;
-    border: 1px solid #02779e;
+    border: 1px solid #9061c2;
     border-radius: 4px;
 }
 
 .tituloFormulario h1{
-    background: #02779e;
+    background: #9061c2;
     margin-top: 0;
     padding: 1rem;
     color: #ffffff;
@@ -62,8 +62,8 @@ form{
 
 .buttonForm .botao{
     padding: 7px 45px 7px 45px;
-    background: #02779e;
-    border: 2px solid #02779e;
+    background: #9061c2;
+    border: 2px solid #9061c2;
     border-radius: 5px;
     color: white;
     font-weight: bold;
@@ -71,8 +71,8 @@ form{
 }
 
 .botao:hover{
-    background: #35c0f7;
-    border: 2px solid #35c0f7;
+    background: #9935f7;
+    border: 2px solid #9935f7;
     transition: 0.1s;
 }
 
